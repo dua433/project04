@@ -21,7 +21,6 @@ $(function () {
             scrollTop: posY[qNum]
         }, 1000);
     });
-    var me = $("section");
     $(".menu>li").click(function (e) {
         e.preventDefault();
         var qNum = $(this).index();
@@ -155,6 +154,13 @@ $(function () {
         for (i = 0; i < 5; i++) {
             posY[i] = $("#container>section").eq(i).offset().top;
         }
+        $("#nav>li").click(function (e) {
+            e.preventDefault();
+            var qNum = $(this).index();
+            $("html,body").stop().animate({
+                scrollTop: posY[qNum]
+            }, 1000);
+        });
         $(".menu>li").click(function (e) {
             e.preventDefault();
             var qNum = $(this).index();
